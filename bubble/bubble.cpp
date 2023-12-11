@@ -48,11 +48,13 @@ void Select_Sort(int a[], int n)
 
 int main()
 {
-    int arr[] = { 37,41,19,81,41,25,56,61,49 };
+    int arr1[] = { 37,41,19,81,41,25,56,61,49 };
     cout << "ªwªj±Æ§Ç" << endl;
-    Bubble_Sort(arr, 9);
+    Bubble_Sort(arr1, 9);
+
+    int arr2[] = { 37,61,19,41,81,25,56,41,49 };
     cout << "¿ï¾Ü±Æ§Ç(?)" << endl;
-    Select_Sort(arr, 9);
+    Select_Sort(arr2, 9);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
