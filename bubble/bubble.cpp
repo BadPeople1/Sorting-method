@@ -7,18 +7,18 @@ using namespace std;
 void Bubble_Sort(int a[], int n)
 {
     int i, j, temp;
-    for (i = n - 1; i > 0; i--)
+    for (i = n - 1; i > 0; i--) //執行n-1次
     {
         for (j = 0; j < i; j++)
         {
-            if (a[j] > a[j + 1])
+            if (a[j] > a[j + 1]) //如果n大於n+1,數值交換
             {
                 temp = a[j];
                 a[j] = a[j + 1];
                 a[j + 1] = temp;
             }
         }
-        for (j = 0; j < n; j++)
+        for (j = 0; j < n; j++) //輸出
         {
             cout << a[j] << " ";
         }
