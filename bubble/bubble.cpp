@@ -46,6 +46,26 @@ void Select_Sort(int a[], int n)
     }
 }
 
+void Insert_Sort(int a[], int n)
+{
+    int i, j, up;
+    for (i = 1; i < n; i++)
+    {
+        up = a[i];
+        j = i;
+        while (j > 0 && a[j - 1] > up)
+        {
+            a[j] = a[j - 1];
+            j--;
+        }
+        a[j] = up;
+
+        for (j = 0; j < n; j++)
+            cout << a[j] << " ";
+        cout << endl;
+    }
+}
+
 int main()
 {
     int arr1[] = { 37,41,19,81,41,25,56,61,49 };
@@ -55,6 +75,10 @@ int main()
     int arr2[] = { 37,61,19,41,81,25,56,41,49 };
     cout << "選擇排序(?)" << endl;
     Select_Sort(arr2, 9);
+
+    int arr3[] = { 37,61,19,41,81,25,56,41,49 };
+    cout << "插入排序(?)" << endl;
+    Select_Sort(arr3, 9);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
