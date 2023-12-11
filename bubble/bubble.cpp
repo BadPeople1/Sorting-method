@@ -27,10 +27,32 @@ void Bubble_Sort(int a[], int n)
     }
 }
 
+void Select_Sort(int a[], int n)
+{
+    int i, j, max, temp;
+    for (i = n - 1; i > 0; i--)
+    {
+        max = i;
+        for (j = i - 1; j >= 0; j--)
+            if (a[j] > a[max])
+                max = j;
+        temp = a[max];
+        a[max] = a[i];
+        a[i] = temp;
+
+        for (j = 0; j < n; j++)
+            cout << a[j] << " ";
+        cout << endl;
+    }
+}
+
 int main()
 {
     int arr[] = { 37,41,19,81,41,25,56,61,49 };
+    cout << "ªwªj±Æ§Ç" << endl;
     Bubble_Sort(arr, 9);
+    cout << "¿ï¾Ü±Æ§Ç(?)" << endl;
+    Select_Sort(arr, 9);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
