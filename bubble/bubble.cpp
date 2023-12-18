@@ -66,19 +66,61 @@ void Insert_Sort(int a[], int n)
     }
 }
 
+int partition(int a[], int l, int r)
+{
+    int i, j, temp;
+    for (i = l + 1, j = r;;)
+    {
+        while (a[i] < a[l] && i <= r)
+            i++;
+        while (a[j] > a[l])
+            j--;
+        if (i >= j)
+            break;
+        
+        temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+    }
+
+    temp = a[l];
+    a[l] = a[j];
+    a[j] = temp;
+
+    for (i = l; i <= r; i++)
+        cout << a[i] << " ";
+    cout << endl;
+
+    return j;
+}
+
+void QuickSort(int a[], int l, int r)
+{
+    int p;
+    if (l < r)
+    {
+        p = partition(a, l, r);
+        QuickSort(a, l, p - 1);
+        QuickSort(a, p + 1, r);
+    }
+}
+
 int main()
 {
-    int arr1[] = { 37,41,19,81,41,25,56,61,49 };
-    cout << "泡沫排序" << endl;
-    Bubble_Sort(arr1, 9);
+    //int arr1[] = { 37,41,19,81,41,25,56,61,49 };
+    //cout << "泡沫排序" << endl;
+    //Bubble_Sort(arr1, 9);
 
-    int arr2[] = { 37,61,19,41,81,25,56,41,49 };
-    cout << "選擇排序(?)" << endl;
-    Select_Sort(arr2, 9);
+    //int arr2[] = { 37,61,19,41,81,25,56,41,49 };
+    //cout << "選擇排序(?)" << endl;
+    //Select_Sort(arr2, 9);
 
-    int arr3[] = { 37,61,19,41,81,25,56,41,49 };
-    cout << "插入排序(?)" << endl;
-    Select_Sort(arr3, 9);
+    //int arr3[] = { 37,61,19,41,81,25,56,41,49 };
+    //cout << "插入排序(?)" << endl;
+    //Select_Sort(arr3, 9);
+
+    int arr[] = { 40,41,19,81,41,25,56,21,61,49 };
+    QuickSort(arr, 0, 9);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
