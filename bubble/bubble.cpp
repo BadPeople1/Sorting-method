@@ -119,8 +119,8 @@ int main()
     //cout << "´¡¤J±Æ§Ç(?)" << endl;
     //Select_Sort(arr3, 9);
 
-    int arr[] = { 40,41,19,81,41,25,56,21,61,49 };
-    QuickSort(arr, 0, 9);
+    int arr4[] = { 40,41,19,81,41,25,56,21,61,49 };
+    QuickSort(arr4, 0, 9);
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
